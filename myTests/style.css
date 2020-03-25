@@ -1,0 +1,25 @@
+main {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    height: 100vh;
+}
+
+h2 {
+    background-color: aqua;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: azure;
+    min-height: 50vh;
+    width: 30vw;
+    padding: 10px;
+    border-radius: 20px;
+}

@@ -1,0 +1,13 @@
+body{
+    background: rgb(155, 155, 150);
+    font-family: Arial,sans-serif;
+}
+img{
+    width: 200px;
+}
+.heading-text{
+    font-size: 40px;
+}
+#first-paragraph {
+    color: white;
+}
