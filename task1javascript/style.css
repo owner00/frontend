@@ -1,0 +1,29 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgrey;
+    flex-direction: column;
+    font-family: monospace;
+}
+
+.onConsole, .onPage {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    flex-direction: column;
+    font-family: monospace;
+}
+
+.onConsole {
+    height: 10vh;
+}
+
+.onPage {
+    height: 80vh;
+    word-break: break-all;
+}
