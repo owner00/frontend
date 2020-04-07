@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 JavaScript</title>
+</head>
+<body>
+    <script>
+        /*
+         *summary: returns an array of objects containing
+         * principal, time, calculated rate, and calculated interest
+         *parameter: array of objects. An object contains the principal,
+         * and the time with their corresponding values
+        */
+        function interestCalculator(principalArray) {
+            let ratesArray = getRates(principalArray);
+            let interestArray = getInterest(principalArray, ratesArray);
+            let result = getInterestData(principalArray, ratesArray, interestArray);
+            return result;
+        }
+
+        /*
+         *summary: returns an array of calculated rate.
+         *parameter: array of objects. An object contains the principal,
+         * and the time with their corresponding values
+        */
+        function getRates(principalArray) {
+            let ratesArray = [];
+            for(let i = 0;i<principalArray.length;i++) {
+                if(principalArray[i].principal >= 2500
+                    && principalArray[i].time > 1 
+                    && principalArray[i].time < 3){
+                        ratesArray.push(3);
+                }
+                else if(principalArray[i].principal >=2500
+                    && principalArray[i].time >= 3){
+                        ratesArray.push(4);
+                }
+                else if(principalArray[i].principal < 2500
+                    || principalArray[i].time <= 1){
+                        ratesArray.push(2);
+                }
+                else {
+                    ratesArray.push(1);
+                }
+            }
+            return ratesArray;
+        }
+
+        function testGetRates() {
+            let initialArray = [
+                {principal: 2500, time: 1.8},
+                {principal: 1000, time: 5},
+                {principal: 3000, time: 1},
+                {principal: 2000, time: 3}
+            ];
+            console.log(getRates(initialArray));
+        }
+
+        /*
+         *summary: returns an array of calculated interests.
+         *parameter: 
+          1. Array of objects. An object contains the principal,
+             and the time with their corresponding values
+          2. Array of rates
+        */
+        function getInterest(principalArray, ratesArray) {
+            let interestArray = [];
+            for(let i = 0;i < principalArray.length;i++) {
+                let tPrincipal = principalArray[i].principal;
+                let tTime = principalArray[i].time;
+                let tRate = ratesArray[i];
+                let tInterest = (tPrincipal * tRate* tTime) / 100;
+                interestArray.push(tInterest);
+            }
+            return interestArray;
+        }
+
+        function testGetInterest() {
+            let initialArray = [
+            {principal: 2500, time: 1.8},
+            {principal: 1000, time: 5},
+            {principal: 3000, time: 1},
+            {principal: 2000, time: 3}
+            ];
+            let tRates = getRates(initialArray);
+            let tInterests = getInterest(initialArray, tRates);
+            console.log(tInterests);
+        }
+
+        /*
+         *summary: returns an array of objects containing the principal,
+           time, calculated rate, and calculated interest.
+         *parameter: 
+          1. Array of objects. An object contains the principal,
+             and the time with their corresponding values
+          2. Array of rates
+          3. Array of interest
+        */
+        function getInterestData(principalArray, ratesArray, interestArray) {
+            let tInterestData = [];
+            let tPrincipal;
+            let tTime;
+            let tRate;
+            let tInterest;
+            for(let i = 0;i < principalArray.length;i++) {
+                tPrincipal = principalArray[i].principal;
+                tTime = principalArray[i].time;
+                tRate = ratesArray[i];
+                tInterest = interestArray[i];
+                let mInterestData = {
+                    principal: tPrincipal,
+                    time: tTime,
+                    rate: tRate,
+                    interest: tInterest
+                };
+                tInterestData.push(mInterestData);
+            }
+            return tInterestData;
+        }
+
+        //Doubles as test for function getInterestDate()
+        let initialArray = [
+            {principal: 2500, time: 1.8},
+            {principal: 1000, time: 5},
+            {principal: 3000, time: 1},
+            {principal: 2000, time: 3}
+        ];
+        let interestData = interestCalculator(initialArray);
+        console.log(interestData);
+
+        /* Testing the individual functions*/
+        //testGetRates();
+        //testGetInterest();
+    </script>
+</body>
+</html>
