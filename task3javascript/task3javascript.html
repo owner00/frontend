@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 Javascript</title>
+</head>
+<body>
+    <script>
+        function yugiohTransform(upperLimit) {
+            let result = [];
+            for(let i=1;i<=upperLimit;i++){
+                let yugiohText = "";
+                if(i % 5 == 0 && i % 3 == 0 && i % 2 == 0) {
+                    yugiohText = "yu-gi-oh";
+                }
+                else if(i % 5 == 0 && i % 3 == 0) {
+                    yugiohText = "gi-oh";
+                }
+                else if(i % 5 == 0 && i % 2 == 0) {
+                    yugiohText = "yu-oh";
+                }
+                else if(i % 3 == 0 && i % 2 == 0) {
+                    yugiohText = "yu-gi";
+                }
+                else if(i % 5 == 0) {
+                    yugiohText = "oh";
+                }
+                else if(i % 3 == 0) {
+                    yugiohText = "gi";
+                }
+                else if(i % 2 == 0) {
+                    yugiohText = "yu";
+                }
+                else {
+                    yugiohText = i;
+                }
+                result.push(yugiohText);
+            }
+            return result;
+        }
+
+        let limit = 100;
+        let transformedTextArray = yugiohTransform(limit);
+        console.log(transformedTextArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* * {
+    padding: 0;
+    border: 0;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.headr {
+    background-color: black;
+    width: 100vw;
+    height: 70px;
+    text-align: center;
+}
+
+.headr h2 {
+    font-family: monospace;
+    color: blue;
+}
+
+.bio-data {
+    width: 100vw;
+    height: 470px;
+}
+
+.bio-data, .personal-summary, .form-design{
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.bio-data {
+    text-align: center;
+}
+.bio-data-headers {
+    color: blue;
+}
+
+.personal-summary {
+    width: 100vw;
+    height: 300px;
+    text-align: center;
+}
+
+.form-design {
+    width: 100vw;
+    text-align: center;
+}
+
+.form-design h4 {
+    color: white;
+}
+.form-design .form-control {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: auto;
+}
+
+.form-control label {
+    color: blue;
+    margin-bottom: 10px;
+}
+
+.form-control input[type=text], input[type=button], input[type=email], select{
+    margin-bottom: 10px;
+    height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px 5px 5px 0px;
+    border: 0;
+    padding: 0px 10px;
+}
+
+.form-control input[type=button] {
+    background-color: blue;
+    color: white;
+}
+.footer {
+    text-align: right;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 30px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.start-ng {
+    color: blueviolet;
+    font-size: large;
+    text-transform: uppercase;
+}
